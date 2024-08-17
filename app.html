@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe4e1; 
+            color: #6c5b7b; 
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ff99cc; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #ff66b2;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #6c5b7b; 
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #d3a2bc;
+            border-radius: 4px;
+            background-color: #ffe4e1;
+            color: #6c5b7b;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #ff4da6;
+        }
+        .task-list {
+            margin-top: 20px;
+        }
+        .task-item {
+            background: #ffccff; 
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .task-item.completed {
+            background: #ff99cc; 
+            text-decoration: line-through;
+        }
+        .task-actions button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .task-actions .complete-btn {
+            background-color: #b266ff;
+            color: white;
+        }
+        .task-actions .complete-btn:hover {
+            background-color: #9933ff;
+        }
+        .task-actions .delete-btn {
+            background-color: #ff4da6;
+            color: white;
+        }
+        .task-actions .delete-btn:hover {
+            background-color: #ff1a8c;
+        }
+        .task-actions .due-btn {
+            background-color: #ff66b2;
+            color: white;
+        }
+        .task-actions .due-btn:hover {
+            background-color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task List</h1>
+        <div class="form-group">
+            <label for="memberName">Add Member</label>
+            <input type="text" id="memberName" placeholder="Enter member name">
+            <button onclick="addMember()">Add Member</button>
+        </div>
+
+        <div class="form-group">
+            <label for="memberSelect">Select Member</label>
+            <select id="memberSelect"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="taskDescription">Task Description</label>
+            <input type="text" id="taskDescription" placeholder="Enter task description">
+        </div>
+
+        <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate">
+        </div>
+
+        <div class="form-group">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="task-list" id="taskList"></div>
+    </div>
+
+    <script src="nadia.js"></script>
+</body>
+</html>
